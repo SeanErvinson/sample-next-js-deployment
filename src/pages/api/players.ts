@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-
+export const runtime = "edge";
 type ResponseData = {
   message: string;
 };
