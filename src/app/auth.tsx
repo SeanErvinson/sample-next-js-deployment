@@ -1,6 +1,8 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import { useState } from "react";
+import fetch from "node-fetch";
+
 const signUp = async (username: string, password: string) => {
   const { data, error } = await authClient.signUp.email(
     {
