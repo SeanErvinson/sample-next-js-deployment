@@ -3,20 +3,20 @@ import { authClient } from "@/lib/auth-client";
 import { useState } from "react";
 
 const signUp = async (username: string, password: string) => {
-  const { data, error } = await authClient.signUp.email(
+  const {} = await authClient.signUp.email(
     {
       name: "Sean",
       email: username,
       password,
     },
     {
-      onRequest: (ctx) => {
+      onRequest: () => {
         //show loading
       },
-      onSuccess: (ctx) => {
+      onSuccess: () => {
         //redirect to the dashboard or sign in page
       },
-      onError: (ctx) => {
+      onError: () => {
         // display the error message
       },
     }
@@ -24,7 +24,7 @@ const signUp = async (username: string, password: string) => {
 };
 
 const signIn = async () => {
-  const { data, error } = await authClient.signIn.email(
+  const {} = await authClient.signIn.email(
     {
       email: "hello@gmail.com",
       password: "hello1231231",
@@ -42,7 +42,7 @@ const signIn = async () => {
 };
 
 const signOut = async () => {
-  const { data, error } = await authClient.signOut();
+  const {} = await authClient.signOut();
 };
 
 export default function Auth() {
