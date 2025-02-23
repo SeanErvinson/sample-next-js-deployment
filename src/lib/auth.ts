@@ -1,17 +1,16 @@
-import { LibsqlDialect } from "@libsql/kysely-libsql";
+import { Pool } from "pg";
 import { betterAuth } from "better-auth";
 import { jwt } from "better-auth/plugins";
 
 export const auth = betterAuth({
   plugins: [jwt()],
-  database: {
-    dialect: new LibsqlDialect({
-      url: "libsql://next-js-sample-seanervinson.turso.io",
-      authToken:
-        "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NDAyNjQ1MzksImlkIjoiMWI2OTMyNGItMGQ3Ny00NzczLThmNWUtOTQ0ZmJhZjNiMWM1In0.PtnZnsoWck6kGS3Pn7malo1QilzXkpHVyOfi5hIVjVflbJXtHLoLYl-KiMeAjnbsrlPEFENeZdcFv9rI1Fw8Dw",
-    }),
-    type: "sqlite",
-  },
+  database: new Pool({
+    database: "sample",
+    user: "neondb_owner",
+    password: "npg_Usml56FREWkD",
+    host: "ep-round-salad-a7u37yev-pooler.ap-southeast-2.aws.neon.tech",
+    ssl: true,
+  }),
   emailAndPassword: {
     enabled: true,
   },

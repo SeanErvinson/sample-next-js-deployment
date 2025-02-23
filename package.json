@@ -9,17 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@libsql/client": "^0.3.3",
-    "@libsql/kysely-libsql": "^0.4.1",
     "better-auth": "^1.1.19",
     "next": "15.1.7",
-    "node-fetch": "^3.3.2",
+    "pg": "^8.13.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
+    "@types/pg": "^8.11.11",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
