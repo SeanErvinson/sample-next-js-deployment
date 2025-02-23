@@ -23,11 +23,11 @@ const signUp = async (username: string, password: string) => {
   );
 };
 
-const signIn = async () => {
+const signIn = async (username: string, password: string) => {
   const {} = await authClient.signIn.email(
     {
-      email: "hello@gmail.com",
-      password: "hello1231231",
+      email: username,
+      password: password,
     },
     {
       onSuccess: async (ctx) => {
@@ -83,7 +83,7 @@ export default function Auth() {
       </button>
       <button
         onClick={() => {
-          signIn();
+          signIn(username, password);
         }}
       >
         Sign In
