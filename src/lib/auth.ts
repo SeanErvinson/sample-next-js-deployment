@@ -3,7 +3,19 @@ import { betterAuth } from "better-auth";
 import { jwt } from "better-auth/plugins";
 
 export const auth = betterAuth({
-  plugins: [jwt()],
+  plugins: [
+    jwt({
+      jwt: {
+        issuer: "https://sample-next-js-deployment-song.netlify.app",
+        audience: "https://sample-next-js-deployment-song.netlify.app",
+      },
+      jwks: {
+        keyPairConfig: {
+          alg: "RS256",
+        },
+      },
+    }),
+  ],
   database: new Pool({
     database: "sample",
     user: "neondb_owner",
